@@ -1,0 +1,364 @@
+:root {
+  --primary: #fb4e4e;
+  --secondary: #333;
+  --white: #f1f1f1;
+  --white-light: #ffffff;
+  --black: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/** 
+  * =======================================================================
+  * BODY 
+  * =======================================================================
+  **/
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100vh 2fr 325px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+/** 
+  * =======================================================================
+  * HEADER 
+  * =======================================================================
+  **/
+header {
+  grid-area: header;
+}
+header div {
+  background-image: url(../../assets/images/city-night-view-g75b82b18a_1920.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  height: 80vh;
+}
+header div span {
+  color: var(--white);
+  font-size: 24px;
+}
+header div h1 {
+  color: var(--primary);
+  font-size: 84px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px var(--black);
+}
+header p {
+  height: 20vh;
+  background-color: var(--secondary);
+  letter-spacing: 1.8px;
+  padding: 25px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-shadow: 0 0 1px var(--secondary);
+  border-top: 4px solid var(--primary);
+}
+/** 
+  * =======================================================================
+  * MAIN 
+  * =======================================================================
+  **/
+main {
+  grid-area: main;
+  background-color: var(--white);
+}
+
+main section .card {
+  display: flex;
+  width: 100vw;
+}
+
+main section .card:nth-child(even) {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+main section .card img {
+  width: 50vw;
+  background-size: cover;
+}
+main section .card div {
+  width: 50vw;
+  padding: 50px;
+}
+
+main section .card div h2 {
+  color: var(--primary);
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+main section .card div p {
+  margin-bottom: 10px;
+}
+
+.btn {
+  border-radius: 20px;
+  padding: 8px 16px;
+  background-color: var(--primary);
+  color: var(--white);
+  text-transform: uppercase;
+  outline: var(--white) 1px solid;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+/* SECTION GALLERY */
+main section:last-child {
+  background-color: var(--white-light);
+  padding: 50px 0;
+}
+
+main section:last-child h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+main section:last-child p {
+  width: 80%;
+  margin: 0 auto 50px;
+}
+
+main section:last-child .gallery {
+  padding: 25px 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  row-gap: 5px;
+  column-gap: 5px;
+}
+
+main section:last-child .gallery figure {
+  height: 300px;
+}
+main section:last-child .gallery figure img {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+}
+main section:last-child .gallery figure figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  font-size: 24px;
+}
+
+/** 
+  * =======================================================================
+  * FOOTER 
+  * =======================================================================
+  **/
+footer {
+  grid-area: footer;
+}
+
+footer .emergency {
+  background-color: var(--primary);
+  height: 250px;
+  display: flex;
+  padding: 50px;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+footer .emergency h3 {
+  font-size: 48px;
+  align-self: flex-start;
+  color: var(--white);
+  text-shadow: 0 0 1.5px var(--black);
+}
+
+footer .emergency ul {
+  border-top: 4px solid var(--white);
+  padding-top: 25px;
+  padding-left: 25px;
+  color: var(--white);
+  font-size: 18px;
+}
+footer .nav {
+  background-color: var(--secondary);
+  display: flex;
+  padding-left: 50px;
+  height: 75px;
+}
+footer .nav nav {
+  width: 50%;
+}
+footer .nav nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--white);
+  font-size: 18px;
+  height: 100%;
+}
+footer div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75px;
+}
+
+footer div img {
+  height: 36px;
+  margin: 0 10px;
+}
+
+@media (max-width: 576px) {
+  /** 
+  * =======================================================================
+  * BODY 
+  * =======================================================================
+  **/
+  body {
+    grid-template-rows: 100vh 2fr 500px;
+  }
+
+/** 
+  * =======================================================================
+  * HEADER 
+  * =======================================================================
+  **/
+  header div {
+    row-gap: 20px;
+    height: 70vh;
+  }
+  header div h1 {
+    text-align: center;
+    font-size: 64px;
+  }
+  header p {
+    height: 30vh;
+    letter-spacing: 2px;
+    padding: 25px;
+  }
+/** 
+  * =======================================================================
+  * MAIN 
+  * =======================================================================
+  **/
+  
+  main section .card {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+  
+  main section .card:nth-child(even) {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main section .card img {
+    width: 100vw;
+    background-size: cover;
+  }
+  main section .card div {
+    width: 100vw;
+    padding: 50px;
+  }
+  
+  main section .card div h2 {
+    color: var(--primary);
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
+  
+  main section .card div p {
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    border-radius: 20px;
+    padding: 8px 16px;
+    background-color: var(--primary);
+    color: var(--white);
+    text-transform: uppercase;
+    outline: var(--white) 1px solid;
+    cursor: pointer;
+    margin-top: 25px;
+  }
+  
+  /* SECTION GALLERY */
+  main section:last-child {
+    background-color: var(--white-light);
+    padding: 50px 0;
+  }
+  
+  main section:last-child h2 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  main section:last-child p {
+    width: 80%;
+    margin: 0 auto 50px;
+  }
+  
+  main section:last-child .gallery {
+    padding: 25px 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    row-gap: 5px;
+    column-gap: 5px;
+  }
+  
+  main section:last-child .gallery figure {
+    height: 300px;
+  }
+  main section:last-child .gallery figure img {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+  }
+  main section:last-child .gallery figure figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  /** 
+  * =======================================================================
+  * FOOTER 
+  * =======================================================================
+  **/
+  footer .emergency {
+    flex-direction: column;
+    height: 350px;
+  }
+  footer .emergency h3 {
+    margin-bottom: 25px;
+  }
+
+  footer .nav {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  footer .nav nav {
+    width: 100%;
+  }
+  footer .nav nav ul {
+    width: 100%;
+  }
+  footer div img {
+    height: 36px;
+    margin: 0 10px;
+  }
+}

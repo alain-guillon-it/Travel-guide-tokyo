@@ -19,7 +19,7 @@
 body {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 100vh 1fr 400px;
+  grid-template-rows: 100vh 1fr 500px;
   grid-template-areas:
     "header" /* 100vh */
     "main" /* 1fr */
@@ -191,15 +191,16 @@ footer {
 }
 footer .emergency {
   background-color: var(--primary);
-  height: 250px;
+  height: 350px;
   padding: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
 }
 footer .emergency h3 {
   font-size: 28px;
-  align-self: flex-start;
+  align-self: center;
   color: var(--white);
   text-shadow: 0 0 1.5px var(--black);
   text-transform: uppercase;
